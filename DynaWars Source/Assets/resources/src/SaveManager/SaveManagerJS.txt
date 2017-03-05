@@ -1,0 +1,155 @@
+#pragma strict
+import System;
+import System.Collections;
+import System.Collections.Generic;
+import System.Diagnostics;
+import System.Linq;
+import System.IO;
+
+public class JS_Manager
+{
+
+	public static function Set_Value(File: String, ValueName: String, Value: String)
+	{
+
+		try {
+			// Create a new INI File with "Key=Value""
+			if (!System.IO.File.Exists(File)) {
+
+				System.IO.File.WriteAllText(File, ValueName + "=" + Value);
+				return;
+
+			// Search line by line in the INI file for the "Key"
+			} else {
+
+				var Line_Number: Int64 = 0;
+				var strArray: String[] = System.IO.File.ReadAllLines(File);
+
+				for (var line_loopVariable: String in strArray) {
+					var line: String = line_loopVariable;
+					if (line.StartsWith(ValueName + "=")) {
+						strArray[Line_Number] = ValueName + "=" + Value;
+						System.IO.File.WriteAllLines(File, strArray);
+						// Replace "value"
+						return;
+					}
+					Line_Number += 1;
+				}
+
+				System.IO.File.AppendAllText(File, Environment.NewLine + ValueName + "=" + Value);
+				// Key don't exist, then create the new "Key=Value"
+
+			}
+
+		} catch (ex: Exception) {
+			UnityEngine.Debug.Log(ex.Message);
+		}
+
+	}
+
+	public static function Load_Value(File: String, ValueName: String): String
+	{
+
+
+		if (!System.IO.File.Exists(File)) {
+			throw new Exception(File + " not found.");
+			// INI File not found.
+			return null;
+
+		} else {
+
+			var returnvalue: String = "";
+
+			for (var line_loopVariable: String in System.IO.File.ReadAllLines(File)) {
+				if (line_loopVariable.StartsWith(ValueName + "=")) {
+					returnvalue = line_loopVariable.Split('='[0]).Last();
+				}
+			}
+
+			if(String.IsNullOrEmpty(returnvalue)) 
+			{
+
+				throw new Exception("Key: " + "\"" + ValueName + "\"" + " not found. On " + File);
+				// Key not found.
+				return null;
+
+			} else {
+
+				return returnvalue;
+
+			}
+
+		}
+
+	}
+
+
+	public static function Delete_Value(File: String, ValueName: String)
+	{
+
+		if (!System.IO.File.Exists(File)) {
+			throw new Exception(File + " not found.");
+			// INI File not found.
+			return;
+
+
+		} else {
+
+			try {
+				var Line_Number: Int64 = 0;
+				var strArray: String[] = System.IO.File.ReadAllLines(File);
+
+				for (var line_loopVariable: String in strArray) {
+					var line: String = line_loopVariable;
+					if (line.StartsWith(ValueName + "=")) {
+						strArray[Line_Number] = null;
+						break; // TODO: might not be correct. Was : Exit For
+					}
+					Line_Number += 1;
+				}
+
+				System.IO.File.WriteAllText(File, String.Join(Environment.NewLine, strArray));
+
+			} catch (ex: Exception) {
+				UnityEngine.Debug.Log(ex.Message);
+			}
+
+		}
+
+	}
+
+
+	public static function Sort_Values(File: String)
+	{
+
+		if (!System.IO.File.Exists(File)) {
+			throw new Exception(File + " not found.");
+			// INI File not found.
+			return;
+
+
+		} else {
+
+			try {
+				var Line_Number: Int64 = 0;
+				var strArray: String[] = System.IO.File.ReadAllLines(File);
+				var TempList: List.<String> = new List.<String>();
+
+				for (var line: String in strArray) {
+					if (!String.IsNullOrEmpty(line))
+						TempList.Add(strArray[Line_Number]);
+					Line_Number += 1;
+				}
+
+				TempList.Sort();
+				System.IO.File.WriteAllLines(File, TempList.ToArray());
+
+			} catch (ex: Exception) {
+				UnityEngine.Debug.Log(ex.Message);
+			}
+
+		}
+
+	}
+
+}

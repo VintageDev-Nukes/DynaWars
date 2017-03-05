@@ -1,0 +1,758 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height: 100%;
+	font-family: Cambria;
+	cursor: default;
+}
+
+input[type="text"] {
+	background: rgba(40, 40, 40, .5);
+	border: 0px;
+	outline: none;
+	color: #fff;
+	font-size: 12px;
+	padding: 3px;
+	font-weight: bold;
+	font-family: Cambria;
+}
+
+input[type="range"]{
+    -webkit-appearance: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    width: 300px;
+    height: 5px;
+    background: #ddd;
+    border: none;
+    border-radius: 3px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    background: #333;
+    margin-top: -6px;
+    border: 1px solid #000000;
+    border-radius: 50%;
+    box-shadow: 1px 1px 1px #000, 0px 0px 1px #0d0d0d;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    border: none;
+    background: rgba(0, 0, 0, .6);
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: rgba(50, 50, 50, .6);
+}
+
+input[type="range"]:focus {
+    outline: none;
+}
+
+a {
+	color:inherit;
+  	text-decoration: none;
+}
+
+body > div {
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+
+.mainApp {
+	background: url(../images/main-background.png);
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+}
+
+.mainMenu {
+	position: absolute;
+	left: 5px;
+	bottom: 0px;
+}
+
+.mainMenu span {
+	display: block;
+	margin: 5px;
+}
+
+.mainMenu span:hover {
+	color: #999;
+}
+
+.menuButton {
+	padding: 8px;
+	background-color: rgba(25, 25, 25, .5);
+	color: #fff;
+	font-size: 14px;
+	font-family: Tahoma;
+	width: 150px;
+	text-align: center;
+}
+
+.menuButton:hover {
+	color: #999;
+}
+
+.back {
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+}
+
+.blur {
+	width: 100%;
+	height: 100%;
+	-webkit-filter: blur(5px);
+	-moz-filter: blur(5px);
+	-o-filter: blur(5px);
+	-ms-filter: blur(5px);
+	filter: blur(5px);
+}
+
+.centerMenu {
+	position: absolute;
+	width: 300px;
+	height: 250px;
+	left: 50%;
+	top: 50%;
+	margin: -125px 0 0 -150px;
+	background-color: rgba(0, 0, 0, .5);
+}
+
+.title {
+	margin-top: 5px;
+	display:block;
+	color: #fff;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.centerMenu div {
+	overflow-y: auto;
+}
+
+.centerMenu div > .menuButton {
+	display: block;
+	width: 90px;
+	margin: 7px 0 0 97px;
+	font-size: 11px;
+}
+
+.centerMenu > .menuButton {
+	font-size: 12px;
+}
+
+#characters > .centerMenu > .menuButton {
+	position: absolute;
+	bottom: 5px;
+	left: 50%;
+	margin: 0px 0px 0px -75px;
+}
+
+#worlds > .centerMenu > .menuButton {
+	width: 125px;
+	margin: 10px -7px -5px 7px;
+	display: inline-block;
+}
+
+.centerMenu label, .subTitle {
+	display: block;
+	font-size: 11px;
+	color: #fff;
+	font-family: Tahoma;
+	font-weight: bold;
+	margin: 5px 0px 0px 5px;
+}
+
+.centerMenu label input[type="text"] {
+	width: 98%;
+	margin-top: 5px;
+}
+
+.centerMenu label input[type="range"] {
+	width: 96%;
+	margin: 8px 0px;
+}
+
+.color-range {
+	float: right;
+	margin-top: -5px!important;
+	margin-right: 10px!important;
+	width: 91%!important;
+}
+
+#create-char > .centerMenu > label > span {
+	position: relative;
+	top: -9px;
+}
+
+#create-world > .centerMenu > .menuButton, 
+#create-char > .centerMenu > .menuButton {
+	position: absolute;
+	width: 50px;
+	left: 50%;
+	margin-left: -25px;
+	bottom: 5px;
+}
+
+#mainGame {
+	font-family: Tahoma;
+}
+
+.vars {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}
+
+.vars span,
+#stats span {
+	display: block;
+	background: rgba(25, 25, 25, .5);
+	padding: 3px 5px;
+	color: #fff;
+	font-size: 11px;
+	margin-bottom: 5px;
+	/* font-weight: bold; */
+	width: 100px;
+	text-align: center;
+}
+
+.slots {
+	position: absolute;
+	left: 50%;
+	bottom: 0px;
+	margin-left: -175px;
+	width: 350px;
+	height: 80px;
+	text-align: center;
+}
+
+.slots span {
+	display: inline-block;
+	background: rgba(25, 25, 25, .5);
+	color: #fff;
+	font-size: 11px;
+}
+
+.slots .middle {
+	position: relative;
+	top: 12px;
+	padding: 0px 5px;
+	height: 15px;
+}
+
+.slots span:not(.middle):not(.bottom) {
+	width: 48px;
+	height: 48px;
+	position: relative;
+	top: -4px;
+	vertical-align: middle;
+	line-height: 23px;
+}
+
+.slots .bottom {
+	padding: 2px 3px;
+	width: 191px;
+	height: 13px;
+}
+
+#gameMenu {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	height: 470px;
+	width: 600px;
+	margin: -235px 0 0 -300px;
+	background: rgba(0, 0, 0, .5);
+}
+
+#pauseMenu {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	height: 200px;
+	width: 300px;
+	margin: -100px 0 0 -150px;
+	background: rgba(0, 0, 0, .5);
+}
+
+.inventory {
+	position: absolute;
+	bottom: 0px;
+	margin: 6px;
+	width: 588px;
+	height: 221px;
+}
+
+.inventory .slot,
+.hotbar .hand,
+.menuInfo .slot,
+.req-mats .slot,
+.craftHUD > div:nth-child(1) > .slot,
+.craftHUD > div:nth-child(2) > div:nth-child(2) > .slot {
+	display: inline-block;
+	background: rgba(25, 25, 25, .75);
+	width: 40px;
+	height: 40px;
+	margin: 1px;
+}
+
+.hotbar {
+	padding-left: 29px;
+}
+
+.hotbar .hand {
+	margin-top: 5px;
+	width: 48px!important;
+	height: 48px!important;
+}
+
+.hotbar .slot {
+	position: relative;
+	top: -4px;
+}
+
+.preview {
+	position: absolute;
+	right: 0px;
+	margin: 6px;
+	width: 150px;
+	height: 215px;
+	background-color: rgba(25, 25, 25, .75);
+}
+
+.upperMenu {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 221px;
+}
+
+.nav {
+	width: 100%;
+}
+
+.nav span {
+	display: inline-block;
+	padding: 3px;
+	margin: 6px 0 0 6px;
+	font-family: Cambria;
+	color: #fff;
+	font-size: 13px;
+	background-color: rgba(25, 25, 25, .75);
+}
+
+.menuInfo {
+	margin: 6px;
+	display: none;
+}
+
+#stats span {
+	display: inline-block!important;
+	margin-right: 5px;
+	background-color: rgba(25, 25, 25, .75);
+}
+
+.menuInfoTitle {
+	display:block;
+	position: relative;
+	top: -1px;
+	left: 2px;
+	color: #fff;
+	font-weight: bold;
+	font-family: Cambria;
+	font-size: 15px;
+}
+
+#social hr {
+	margin: 2px 0;
+	width: 417px;
+}
+
+#prevDef {
+	position: absolute;
+	right: 0px;
+	margin: 6px;
+	padding: 3px;
+	font-family: Cambria;
+	color: #fff;
+	font-size: 13px;
+	background-color: rgba(50, 50, 50, .75);
+}
+
+.preview:hover > #prevDef {
+	display: block;
+}
+
+#crafting > div {
+	position: relative;
+	top: -3px;
+	width: 100%;
+	height: 195px;
+}
+
+/*#crafting > div div {
+	display: inline-block;
+}*/
+
+.craftMenu {
+	height: 100%;
+	width: 160px;
+	background: rgba(50, 50, 50, .75);
+	overflow-y: auto;
+	margin-right: -5px;
+}
+
+.craftMenu > div {
+	padding: 4px;
+	border-bottom: 1px solid rgb(90, 90, 90);
+}
+
+.craftMenu > div:last-child {
+	border: 0px;
+}
+
+.prev {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	background: rgb(70, 70, 70);
+}
+
+.prev img {
+	margin: 4px 0 0 4px;
+}
+
+.caption {
+	display: inline-block;
+	position: relative;
+	top: -11px;
+	color: #fff;
+	font-size: 13px;
+	font-family: Cambria;
+}
+
+#craft, #skill, #npc {
+	margin-right: -5px;
+}
+
+.hover-nav {
+	background: rgba(128, 128, 128, .75)!important;
+	color: #000!important;
+}
+
+#emptyCraftItem {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	margin: -18.5px 0 0 -16px;
+	color: #fff;
+	font-family: Cambria;
+	font-weight: normal;
+}
+
+.craftItem {
+	/*position: relative;
+	top: -184px;*/
+	height: 100%;
+	width: 428px;
+	background: rgba(50, 50, 50, .75);
+}
+
+.subMenuCI {
+	position: relative;
+	margin: 5px;
+	width: 100%;
+	height: 100%;
+}
+
+.itemInfo {
+	width: 160px;
+	height: 132px;
+}
+
+.itemInfo > div:nth-child(1) {
+	width: 100%;
+	height: 40px;
+	background: rgb(70, 70, 70);
+	color: #fff;
+	font-size: 13px;
+	font-family: Cambria;
+}
+
+.itemInfo > div:nth-child(1) img {
+	margin: 4px;
+}
+
+.itemInfo > div:nth-child(1) span {
+	position: relative;
+	top: -15px;
+}
+
+.itemInfo > div:nth-child(2) {
+	position: relative;
+	width: 100%;
+	height: 88px;
+	background: rgb(60, 60, 60);
+	overflow: hidden;
+}
+
+.itemInfo > div:nth-child(2) span {
+	display: inline-block;
+	background: rgb(70, 70, 70);
+	color: #fff;
+	font-size: 13px;
+	font-family: Cambria;
+	margin: 4px;
+	padding: 3px 5px;
+}
+
+.itemInfo > div:nth-child(2) div {
+	position: absolute;
+	top: 0px;
+	right: 9px;
+	height: 100%;
+	width: 16px;
+}
+
+.itemInfo > div:nth-child(2) div img {
+	position: absolute;
+}
+
+.req-mats {
+	position: relative;
+	left: -1px;
+	bottom: 3px;
+	width: 100%;
+	color: #fff;
+	font-size: 13px;
+	font-family: Cambria;
+}
+
+.craftHUD {
+	position: absolute;
+	top: -1px;
+	left: 164px;
+	width: 253px;
+	height: 129px;
+}
+
+.craftHUD > div:nth-child(1) {
+	display: table;
+	height: 100%;
+}
+
+.craftHUD > div:nth-child(1) > div {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.craftHUD > div:nth-child(2) > div:nth-child(1) {
+	position: absolute;
+	top: 50%;
+	left: 46px;
+	margin-top: -2.5px;
+	height: 40px;
+}
+
+.craftHUD > div:nth-child(2) > div:nth-child(1) > div {
+	width: 100px;
+	height: 5px;
+	background: #000;
+}
+
+.craftHUD > div:nth-child(2) > div:nth-child(1) > div > div {
+	width: 40%;
+	height: 100%;
+	background: #fff;
+}
+
+.craftHUD > div:nth-child(2) > div:nth-child(2) {
+	position: absolute;
+	top: 50%;
+	left: 150px;
+	margin-top: -28.5px;
+}
+
+.craftHUD > div:nth-child(2) > div:nth-child(2) > div {
+	height: 15px;
+}
+
+.craftHUD > div:nth-child(2) > div:nth-child(2) > div > span {
+	display: inline-block;
+	background: rgb(20, 20, 20);
+	width: 20px;
+	color: #fff;
+	font-size: 13px;
+	font-family: Cambria;
+	position: relative;
+	top: -5px;
+	left: 6px;
+	margin-left: -5px;
+	text-align: center;
+}
+
+.craftHUD > div:nth-child(2) > div:nth-child(3) {
+	position: absolute;
+	top: 50%;
+	left: 196px;
+	margin-top: -11.5px;
+	padding: 3px 0;
+	width: 58px;
+	background-color: rgba(25, 25, 25, .5);
+	color: #fff;
+	font-size: 14px;
+	font-family: Tahoma;
+	text-align: center;
+}
+
+.craftHUD > div:nth-child(1) > div > div > div {
+	height: 15px;
+}
+
+.craftHUD > div:nth-child(1) > div > div > div > span {
+	display: inline-block;
+	background: rgb(20, 20, 20);
+	width: 20px;
+	color: #fff;
+	font-size: 13px;
+	font-family: Cambria;
+	position: relative;
+	top: -5px;
+	left: 6px;
+	margin-left: -5px;
+	text-align: center;
+}
+
+.rm-arrows {
+	position: absolute;
+	top: -4px;
+	right: 0px;
+}
+
+.rm-arrows img {
+	width: 24px;
+	height: 24px;
+	margin-left: -13px;
+}
+
+#skills > div {
+	position: relative;
+	top: -3px;
+	width: 100%;
+	height: 434px;
+}
+
+#skills > div > div:nth-child(1) {
+	color: #fff;
+	font-size: 16px;
+	font-family: Cambria;
+	line-height: 38px;
+	text-align: center;
+	background: rgba(40, 40, 40, .5);
+	width: 100%;
+	height: 38px;
+}
+
+#skills > div > div:nth-child(2) {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	height: 394px;
+	overflow-y: auto;
+}
+
+#skills > div > div:nth-child(2) > div:nth-child(1) {
+	margin-top: 0px;
+}
+
+#skills > div > div:nth-child(2) > div {
+	margin: 2px 0;
+	padding: 0 5px;
+	color: #fff;
+	font-size: 14px;
+	font-family: Cambria;
+	line-height: 31px;
+	background: rgba(40, 40, 40, .5);
+	max-width: 100%;
+	height: 31px;
+}
+
+#skills > div > div:nth-child(2) > div > div:nth-child(1) {
+	position: fixed;
+	color: #fff;
+	font-size: 13px;
+	font-family: Cambria;
+	padding: 5px;
+	background: rgba(60, 60, 60, .75);
+	z-index: 1;
+	display: none;
+	height: 20px;
+	line-height: 20px;
+}
+
+#skills > div > div:nth-child(2) > div > div:nth-child(2) {
+	position: absolute;
+	right: 0px;
+	margin-right: 5px;
+	display: inline-block;
+	line-height: 21px;
+	color: #fff;
+	font-size: 14px;
+	margin-top: 5px;
+	text-align: center;
+	width: 110px;
+	height: 21px;
+	background-image: url(../images/icons/uSkill-m.png);
+	background-repeat: repeat-x;
+	background-position: 3px;
+}
+
+#npcs > div {
+	position: relative;
+	top: -3px;
+	padding: 3px 0 0 6px;
+	max-width: 100%;
+	max-height: 434px;
+	background: rgba(40, 40, 40, .5);
+}
+
+#npcs > div > div {
+	display: inline-block;
+	margin: 2px -1px;
+	width: 80px;
+	height: 58px;
+	background: rgba(50, 50, 50, .75);
+	color: #fff;
+	font-size: 13px;
+	font-family: Cambria;
+	line-height: 58px;
+	text-align: center;
+}
+
+#npcs > div > div > div {
+	position: fixed;
+	color: #fff;
+	font-size: 13px;
+	font-family: Cambria;
+	padding: 5px;
+	background: rgba(60, 60, 60, .75);
+	z-index: 1;
+	display: none;
+	height: 20px;
+	line-height: 20px;
+}

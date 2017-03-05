@@ -1,0 +1,14 @@
+C:\Users\Alvaro\Documents\Visual Studio 2013\Projects\DynaWars - Item Creator\DynaWars - Item Creator\bin\Debug\DynaWars - Item Creator.exe.config
+C:\Users\Alvaro\Documents\Visual Studio 2013\Projects\DynaWars - Item Creator\DynaWars - Item Creator\bin\Debug\DynaWars - Item Creator.exe
+C:\Users\Alvaro\Documents\Visual Studio 2013\Projects\DynaWars - Item Creator\DynaWars - Item Creator\bin\Debug\DynaWars - Item Creator.pdb
+C:\Users\Alvaro\Documents\Visual Studio 2013\Projects\DynaWars - Item Creator\DynaWars - Item Creator\bin\Debug\DynaWars - Item Creator.xml
+C:\Users\Alvaro\Documents\Visual Studio 2013\Projects\DynaWars - Item Creator\DynaWars - Item Creator\obj\Debug\DynaWars___Item_Creator.frmBlockGenerator.resources
+C:\Users\Alvaro\Documents\Visual Studio 2013\Projects\DynaWars - Item Creator\DynaWars - Item Creator\obj\Debug\DynaWars___Item_Creator.frmItemProfile.resources
+C:\Users\Alvaro\Documents\Visual Studio 2013\Projects\DynaWars - Item Creator\DynaWars - Item Creator\obj\Debug\DynaWars___Item_Creator.frmMain.resources
+C:\Users\Alvaro\Documents\Visual Studio 2013\Projects\DynaWars - Item Creator\DynaWars - Item Creator\obj\Debug\DynaWars___Item_Creator.frmTint.resources
+C:\Users\Alvaro\Documents\Visual Studio 2013\Projects\DynaWars - Item Creator\DynaWars - Item Creator\obj\Debug\DynaWars___Item_Creator.frmTools.resources
+C:\Users\Alvaro\Documents\Visual Studio 2013\Projects\DynaWars - Item Creator\DynaWars - Item Creator\obj\Debug\DynaWars___Item_Creator.Resources.resources
+C:\Users\Alvaro\Documents\Visual Studio 2013\Projects\DynaWars - Item Creator\DynaWars - Item Creator\obj\Debug\DynaWars - Item Creator.vbproj.GenerateResource.Cache
+C:\Users\Alvaro\Documents\Visual Studio 2013\Projects\DynaWars - Item Creator\DynaWars - Item Creator\obj\Debug\DynaWars - Item Creator.exe
+C:\Users\Alvaro\Documents\Visual Studio 2013\Projects\DynaWars - Item Creator\DynaWars - Item Creator\obj\Debug\DynaWars - Item Creator.xml
+C:\Users\Alvaro\Documents\Visual Studio 2013\Projects\DynaWars - Item Creator\DynaWars - Item Creator\obj\Debug\DynaWars - Item Creator.pdb

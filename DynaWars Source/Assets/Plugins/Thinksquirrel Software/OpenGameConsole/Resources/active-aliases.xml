@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DictionaryWrapper xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Keys>
+    <string>clr</string>
+    <string>cls</string>
+    <string>list</string>
+    <string>ls</string>
+    <string>li</string>
+    <string>download</string>
+    <string>dl</string>
+  </Keys>
+  <Values>
+    <string>clear</string>
+    <string>clear</string>
+    <string>listobjects</string>
+    <string>listobjects</string>
+    <string>listobjects</string>
+    <string>get</string>
+    <string>get</string>
+  </Values>
+</DictionaryWrapper>

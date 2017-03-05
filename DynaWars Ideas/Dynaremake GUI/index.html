@@ -1,0 +1,340 @@
+<html>
+	<head>
+		<title>DynaRemake GUI HTML Example</title>	
+		<link rel="stylesheet" type="text/css" href="styles/web.css" />
+		<script type="text/javascript" src="scripts/web.js"></script>
+	</head>
+	<body>
+		<div id="css"></div>
+		<div id="css1"></div>
+		<div id="background" class="mainApp" style="display:block;"></div>
+		<div id="main" style="display:block;">
+			<div class="mainMenu">
+				<span class="menuButton" onclick="javascript:switchTemplate('main', 'characters', true);">JUGAR</span>
+				<!---<span>Multijugador</span>-->
+				<span class="menuButton">OPCIONES<!-- [<img src="images/icons/langs.png" />]--></span>
+				<span class="menuButton">CRÉDITOS</span>
+				<!---<span>INFORMACIÓN</span>-->
+				<span class="menuButton">SALIR</span>
+			</div>
+		</div>
+		<div id="characters">
+			<div class="centerMenu">
+				<span class="title">Elige un personaje</span>
+				<div style="height: 185px;">
+					<span class="menuButton" onclick="javascript:switchTemplate('characters', 'worlds', true);">Char 1</span>
+					<span class="menuButton" onclick="javascript:switchTemplate('characters', 'create-char', true);">Vacío</span>
+					<span class="menuButton" onclick="javascript:switchTemplate('characters', 'create-char', true);">Vacío // Nuevo</span>
+					<span class="menuButton">Vacío</span>
+					<span class="menuButton">Vacío</span>
+					<span class="menuButton">Vacío</span>
+					<span class="menuButton">Vacío</span>
+					<span class="menuButton">Vacío</span>
+				</div>
+				<span class="menuButton">Borrar personaje</span> <!--- Al hacer click en este botón, y seleccionar un personaje este se borrará (antes se preguntará al usuario para confirmar) -->
+			</div>
+			<div class="menuButton back" onclick="javascript:back(this, 'main');">&#8678; VOLVER</div>
+		</div>
+		<div id="create-char">
+			<div class="centerMenu">
+				<span class="title">Crear personaje</span>
+				<label>Nombre<br><input type="text" /></label>
+				<label style="text-align: center;">Altura<br><input type="range" /></label>
+				<label style="text-align: center;">Anchura<br><input type="range" /></label>
+				<span class="subTitle" style="text-align: center;margin-bottom: 15px;">Color</span>
+				<label><span>R</span><input type="range" class="color-range" /></label>
+				<label><span>G</span><input type="range" class="color-range" /></label>
+				<label><span>B</span><input type="range" class="color-range" /></label>
+				<span class="menuButton" onclick="javascript:switchTemplate('create-char', 'characters', true);">OK</span>
+			</div>
+			<div class="menuButton back" onclick="javascript:back(this, 'characters', false);">&#8678; VOLVER</div>
+		</div>
+		<div id="worlds">
+			<div class="centerMenu">
+				<span class="title">Elige una partida</span>
+				<div style="height: 150px;">
+					<span class="menuButton" onclick="javascript:switchTemplate('worlds', 'mainGame')+gameBackground();">Mundo 1</span>
+					<span class="menuButton" onclick="javascript:switchTemplate('worlds', 'mainGame')+gameBackground();">Mundo 2</span>
+					<span class="menuButton" onclick="javascript:switchTemplate('worlds', 'mainGame')+gameBackground();">Mundo 3</span>
+				</div>
+				<span class="menuButton" onclick="javascript:switchTemplate('worlds', 'create-world', true);">Crear</span>
+				<span class="menuButton">Renombrar</span><br> <!--- Al hacer click en este botón se tendrá que seleccionar una partida -->
+				<span class="menuButton">Borrar</span> <!--- Al hacer click en este botón se tendrá que seleccionar una partida -->
+				<span class="menuButton">Recrear</span> <!--- Al hacer click en este botón se tendrá que seleccionar una partida -->
+			</div>
+			<div class="menuButton back" onclick="javascript:back(this, 'characters', false);">&#8678; VOLVER</div>
+		</div>
+		<div id="create-world">
+			<div class="centerMenu">
+				<span class="title">Crear partida</span>
+				<label>Nombre<br><input type="text" /></label>
+				<label>Semilla<br><input type="text" /></label>
+				<span class="menuButton" onclick="javascript:switchTemplate('create-world', 'worlds', true);">OK</span>
+			</div>
+			<div class="menuButton back" onclick="javascript:back(this, 'worlds', false);">&#8678; VOLVER</div>
+		</div>
+		<div id="mainGame"> <!--- IMPORTANT PART! -->
+			<div class="vars">
+				<span>Vida: 100</span> <!--- 100/xx? -->
+				<span>Enegía: 100</span>
+				<span>Hambre: 0</span>
+				<span>Sed: 0</span>
+				<!--- <span>Enfermedad: 0</span> Infección // Radiación?
+				<span>Sueño: 0</span>
+				<span>Defensa: 0</span> Como en Terraria
+				Magic, vision, temp, etc?
+				<span>Dinero: xx Coins</span>
+				<span>Exp: xx</span>
+				<span>Peso: xx Kg</span> -->
+			</div>
+			<div class="slots">
+				<span>Left<br>hand</span>
+				<span class="middle">Nombre del item</span> <!--- Aquí se mostrará el item del slot de hotbar seleccionado -->
+				<span>Right hand</span><br>
+				<span class="bottom">...</span> <!--- You are felling comfortable (cuando no hay items, seleccionados) // [1-xx] (munición) // xxx usos / elementos (pj, Terraria: wire y alicates) (herramientas) || 
+
+				Método 1: si se pulsa L o R cuando el Slot del medio esté lleno y los de la mano respectiva este vacio, el item se ira a la mano, [en caso de que el slot del medio este vacio o las manos esten ocupadas y el slot lleno] en caso de que la tecla de cualquier mano (L o R) se pulse doblemente en menos de un segundo, se seleccionará el slot de la mano respectiva (cuando se se realice la proxima accion el slot de la mano seleccionada será deseleccionado), en caso de que el slot del medio esté lleno y el slot de una de la manos está seleccionado y se pulsa la tecla correspondiente a la mano (L o R) el item se intercambiará, en caso de que el slot del medio esté vacio (en la misma situación), el item de la mano seleccionada se ira al slot del medio 
+
+				============
+
+				L o R = Teclas principales
+
+				Método 2: El item del medio nunca será renderizado (solamente se mostrará en la escena aquellos items que se puedan colocar), ¿pero siempre va a estar seleccionado?, los dos items de la mano estarán renderizados, pero solo se seleccionarán* 
+				si se pulsa una de las teclas iniciales por un corto periodo de tiempo se intercambiará (si fuese posible) el item del medio con el de la mano a la que esa tecla le corresponda, *en caso de que el tiempo de pulsado sea más largo a 0.5s ? (no tiene mucho uso, ya que simplemente para invocar una función del item que está en cualquier mano, solo hará falta hacer click en el boton derecho del raton para la mano derecha y el en izquierdo para la izquierda)
+
+				============
+
+				*Como hacer todo esto me va a llevar un tiempo, mostrar al principio únicamente los slots de la hotbar como hace Minecraft -->
+			</div>
+			<div id="gameMenu" style="display: none;">
+				<div class="upperMenu">
+					<div id="armorPrev" class="preview" style="background-image: url(http://th07.deviantart.net/fs70/200H/i/2012/313/5/1/brs_update_by_naaaf-d5kgbgh.png);background-repeat: no-repeat;" onclick="javascript: document.getElementById('css1').innerHTML = '<style>.menuInfo:not(#social) {display: none!important;}</style>'+showElem('social')+showElem('socialMenu', 'inline-block')+showElem('prevDef');">
+						<span id="prevDef" style="display: none;">0 Def</span>
+					</div>
+					<div class="nav"><!---<span>Armadura</span>-->
+					<span id="craft" onclick="javascript: (document.getElementById('crafting').style.display == 'none') ? document.getElementById('css1').innerHTML = '<style>.menuInfo:not(#crafting) {display: none!important;}</style>'+showElem('crafting')+hideElem('armorPrev')+document.getElementById('craft').setAttribute('class', 'hover-nav')+document.getElementById('skill').setAttribute('class', '')+document.getElementById('npc').setAttribute('class', '')+showElem('inv')+hideElem('socialMenu') : document.getElementById('css1').innerHTML = '<style>.menuInfo:not(#stats) {display: none!important;}</style>'+hideElem('crafting')+showElem('armorPrev')+document.getElementById('craft').setAttribute('class', '')+document.getElementById('npc').setAttribute('class', '')+document.getElementById('skill').setAttribute('class', '');">Crafting</span>
+					<span id="skill" onclick="javascript: (document.getElementById('skills').style.display == 'none') ? document.getElementById('css1').innerHTML = '<style>.menuInfo:not(#skills) {display: none!important;}</style>'+showElem('skills')+hideElem('armorPrev')+hideElem('inv')+document.getElementById('skill').setAttribute('class', 'hover-nav')+document.getElementById('npc').setAttribute('class', '')+document.getElementById('craft').setAttribute('class', '')+hideElem('socialMenu') : document.getElementById('css1').innerHTML = '<style>.menuInfo:not(#stats) {display: none!important;}</style>'+hideElem('skills')+showElem('armorPrev')+showElem('inv')+document.getElementById('skill').setAttribute('class', '')+document.getElementById('npc').setAttribute('class', '')+document.getElementById('craft').setAttribute('class', '');">Skills</span>
+					<span id="npc" onclick="javascript: (document.getElementById('npcs').style.display == 'none') ? document.getElementById('css1').innerHTML = '<style>.menuInfo:not(#npcs) {display: none!important;}</style>'+showElem('npcs')+hideElem('armorPrev')+hideElem('inv')+document.getElementById('npc').setAttribute('class', 'hover-nav')+document.getElementById('skill').setAttribute('class', '')+document.getElementById('craft').setAttribute('class', '')+hideElem('socialMenu') : document.getElementById('css1').innerHTML = '<style>.menuInfo:not(#stats) {display: none!important;}</style>'+hideElem('npcs')+showElem('armorPrev')+showElem('inv')+document.getElementById('npc').setAttribute('class', '')+document.getElementById('craft').setAttribute('class', '')+document.getElementById('skill').setAttribute('class', '');">NPCs</span>
+					<span id="socialMenu" onclick="javascript: document.getElementById('css1').innerHTML = '<style>.menuInfo:not(#stats) {display: none!important;}</style>'+hideElem('social')+hideElem('socialMenu')+hideElem('prevDef');" style="display: none;">Armadura [x]</span></div>
+					<div id="stats" class="menuInfo" style="display: block;">
+						<span>Vida: 100</span> <!--- 100/xx? --><span style="margin-left:-5px;">Dinero: xx Coins</span><br>
+						<span>Enegía: 100</span><span>Exp: xx</span><br>
+						<span>Hambre: 0</span><span>Peso: xx Kg</span><br>
+						<span>Sed: 0</span><br>
+						<span>Enfermedad: 0</span><br> <!--- Infección // Radiación? -->
+						<span>Sueño: 0</span><br>
+						<span>Defensa: 0</span> <!--- Como en Terraria -->
+						<!--- Magic, vision, temp, etc? -->
+					</div>
+					<div id="social" class="menuInfo">
+						<span class="menuInfoTitle">Armadura</span>
+						<span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span>
+						<hr>
+						<span class="menuInfoTitle">Apariencia</span>
+						<span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span>
+						<hr>
+						<span class="menuInfoTitle">Accesorios</span>
+						<span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span>
+					</div>
+					<div id="crafting" class="menuInfo" style="display: none;">
+						<div>
+							<div class="craftMenu" style="float: left;"> <!--- Craftable items -->
+								<div onclick="javascript: hideElem('emptyCraftItem')+showElem('ci1')+hideElem('ci2');">
+									<span class="prev"><img src="http://www.minecraftinfo.com/images/1203.png" /></span>
+									<span class="caption">Glowstone Lamp<br>[Workbench]</span>
+								</div>
+								<div onclick="javascript: hideElem('emptyCraftItem')+showElem('ci2')+hideElem('ci1');">
+									<span class="prev"><img src="http://www.minecraftinfo.com/images/571.png" /></span>
+									<span class="caption">Cooked Porkchop<br>[Furnance]</span>
+								</div>
+								<!--- <div>
+									<span class="prev"><img src="http://www.minecraftinfo.com/images/571.png" /></span>
+								</div>
+								<div>
+									<span class="prev"><img src="http://www.minecraftinfo.com/images/571.png" /></span>
+								</div>
+								<div>
+									<span class="prev"><img src="http://www.minecraftinfo.com/images/571.png" /></span>
+								</div> -->
+							</div>
+							<div class="craftItem" style="float: right;"> <!--- Item GUI -->
+								<h1 id="emptyCraftItem">---</h1>
+								<div id="ci1" class="subMenuCI" style="display: none;">
+									<div class="itemInfo">
+										<div><img src="http://www.minecraftinfo.com/images/1203.png" /><span>Glowstone</span></div>
+										<div>
+											<span>Tiempo: 5s</span>
+											<span>Peso: xx Kg [xx Kg<!--- Peso de los materiales -->]</span>
+											 <div> <!--- Display: block / none -->
+												 <img src="images/icons/arrow_up.png" style="top: -8px;" />
+												 <img src="images/icons/arrow_down.png" style="bottom: -11px;" />
+											 </div>
+										</div>
+									</div>
+									<div class="craftHUD">
+										<div>
+											<div>
+												<span class="slot"></span>
+											</div>
+										</div>
+										<div>
+											<div>
+												<div>
+													<div></div>
+												</div>
+											</div>
+											<div>
+												<span class="slot"></span>
+												<div id="addlessMats">
+													<span>-</span>
+													<span>+</span>
+												</div>
+											</div>
+											<div id="ok" onclick="javascript: (document.getElementById('ok').innerHTML = '[xx:xx]')+hideElem('addlessMats');">OK</div>
+										</div>
+									</div>
+									<div class="req-mats">
+										<span style="display: block;">
+											Materiales requeridos
+											<div class="rm-arrows">
+												<img src="images/icons/arrow_left.png" />
+												<img src="images/icons/arrow_right.png" />
+											</div>
+										</span>
+										<span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span>
+									</div>
+								</div>
+								<div id="ci2" class="subMenuCI" style="display: none;">
+									<div class="itemInfo">
+										<div><img src="http://www.minecraftinfo.com/images/571.png" /><span>Cooked Porkchop</span></div>
+										<div>
+											<span>Tiempo: 5s</span>
+											<span>Peso: xx Kg [xx Kg<!--- Peso de los materiales -->]</span>
+											<span>Fundición: xx KCal [xx KCal<!--- Poder calorifico total en el inv como combustible -->]</span>
+											 <div> <!--- Display: block / none -->
+												 <img src="images/icons/arrow_up.png" style="top: -8px;" />
+												 <img src="images/icons/arrow_down.png" style="bottom: -11px;" />
+											 </div>
+										</div>
+									</div>
+									<div class="craftHUD">
+										<div>
+											<div>
+												<span class="slot"></span>
+												<br>
+												<img src="http://wcdn2.dataknet.com/static/resources/icons/set52/920a6093.png" style="margin-left: 5px;" />
+												<br>
+												<!---<span class="slot"></span>-->
+												<div>
+													<span class="slot"></span>
+													<div id="switchMats">
+														<span><</span>
+														<span>></span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div>
+											<div>
+												<div>
+													<div></div>
+												</div>
+											</div>
+											<div>
+												<span class="slot"></span>
+												<div id="addlessMats">
+													<span>-</span>
+													<span>+</span>
+												</div>
+											</div>
+											<div id="ok" onclick="javascript: (document.getElementById('ok').innerHTML = '[xx:xx]')+hideElem('switchMats')+hideElem('addlessMats');">OK</div>
+										</div>
+									</div>
+									<div class="req-mats">
+										<span style="display: block;">
+											Materiales requeridos
+											<div class="rm-arrows">
+												<img src="images/icons/arrow_left.png" />
+												<img src="images/icons/arrow_right.png" />
+											</div>
+										</span>
+										<span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="skills" class="menuInfo" style="display: none;">
+						<!--- http://gyazo.com/41b158191b0666017f06ad1686a00b0d.png : Al hacer hover sobre una de las skills si está bloqueado se mostrará los requerimientos y si no se mostrará una descripción -->
+						<div>
+							<div>
+								EXP Total: xx
+							</div>
+							<div>
+								<div onmousemove="javascript: show(this.childNodes[1])+followPos(this.childNodes[1]);" onmouseout="javascript: hide(this.childNodes[1]);">Tal skill [xx/Max x]<div>Desc</div><div>Coste: xx</div></div>
+								<div onmousemove="javascript: show(this.childNodes[1])+followPos(this.childNodes[1]);" onmouseout="javascript: hide(this.childNodes[1]);">Tal skill [xx/Max x]<div>Desc</div><div>Coste: xx</div></div>
+								<div onmousemove="javascript: show(this.childNodes[1])+followPos(this.childNodes[1]);" onmouseout="javascript: hide(this.childNodes[1]);">Tal skill [xx/Max x]<div>Desc</div><div>Coste: xx</div></div>
+								<div onmousemove="javascript: show(this.childNodes[1])+followPos(this.childNodes[1]);" onmouseout="javascript: hide(this.childNodes[1]);">Tal skill [xx/Max x]<div>Desc</div><div>Coste: xx</div></div>
+								<div onmousemove="javascript: show(this.childNodes[1])+followPos(this.childNodes[1]);" onmouseout="javascript: hide(this.childNodes[1]);">Tal skill [xx/Max x]<div>Desc</div><div>Coste: xx</div></div>
+								<div onmousemove="javascript: show(this.childNodes[1])+followPos(this.childNodes[1]);" onmouseout="javascript: hide(this.childNodes[1]);">Tal skill [xx/Max x]<div>Desc</div><div>Coste: xx</div></div>
+								<div onmousemove="javascript: show(this.childNodes[1])+followPos(this.childNodes[1]);" onmouseout="javascript: hide(this.childNodes[1]);">Tal skill [xx/Max x]<div>Desc</div><div>Coste: xx</div></div>
+								<div onmousemove="javascript: show(this.childNodes[1])+followPos(this.childNodes[1]);" onmouseout="javascript: hide(this.childNodes[1]);">Tal skill [xx/Max x]<div>Desc</div><div>Coste: xx</div></div>
+								<div onmousemove="javascript: show(this.childNodes[1])+followPos(this.childNodes[1]);" onmouseout="javascript: hide(this.childNodes[1]);">Tal skill [xx/Max x]<div>Desc</div><div>Coste: xx</div></div>
+								<div onmousemove="javascript: show(this.childNodes[1])+followPos(this.childNodes[1]);" onmouseout="javascript: hide(this.childNodes[1]);">Tal skill [xx/Max x]<div>Desc</div><div>Coste: xx</div></div>
+								<div onmousemove="javascript: show(this.childNodes[1])+followPos(this.childNodes[1]);" onmouseout="javascript: hide(this.childNodes[1]);">Tal skill [xx/Max x]<div>Desc</div><div>Coste: xx</div></div>
+								<div onmousemove="javascript: show(this.childNodes[1])+followPos(this.childNodes[1]);" onmouseout="javascript: hide(this.childNodes[1]);">Tal skill [xx/Max x]<div>Desc</div><div>Coste: xx</div></div>
+								<div onmousemove="javascript: show(this.childNodes[1])+followPos(this.childNodes[1]);" onmouseout="javascript: hide(this.childNodes[1]);">Tal skill [xx/Max x]<div>Desc</div><div>Coste: xx</div></div>
+								<div onmousemove="javascript: show(this.childNodes[1])+followPos(this.childNodes[1]);" onmouseout="javascript: hide(this.childNodes[1]);">Tal skill [xx/Max x]<div>Desc</div><div>Coste: xx</div></div>
+								<div onmousemove="javascript: show(this.childNodes[1])+followPos(this.childNodes[1]);" onmouseout="javascript: hide(this.childNodes[1]);">Tal skill [xx/Max x]<div>Desc</div><div>Coste: xx</div></div>
+								<div onmousemove="javascript: show(this.childNodes[1])+followPos(this.childNodes[1]);" onmouseout="javascript: hide(this.childNodes[1]);">Tal skill [xx/Max x]<div>Desc</div><div>Coste: xx</div></div>
+								<div onmousemove="javascript: show(this.childNodes[1])+followPos(this.childNodes[1]);" onmouseout="javascript: hide(this.childNodes[1]);">Tal skill [xx/Max x]<div>Desc</div><div>Coste: xx</div></div>
+								<div onmousemove="javascript: show(this.childNodes[1])+followPos(this.childNodes[1]);" onmouseout="javascript: hide(this.childNodes[1]);">Tal skill [xx/Max x]<div>Desc</div><div>Coste: xx</div></div>
+								<div onmousemove="javascript: show(this.childNodes[1])+followPos(this.childNodes[1]);" onmouseout="javascript: hide(this.childNodes[1]);">Tal skill [xx/Max x]<div>Desc</div><div>Coste: xx</div></div>
+								<div onmousemove="javascript: show(this.childNodes[1])+followPos(this.childNodes[1]);" onmouseout="javascript: hide(this.childNodes[1]);">Tal skill [xx/Max x]<div>Desc</div><div>Coste: xx</div></div>
+							</div>
+						</div>
+					</div>
+					<div id="npcs" class="menuInfo" style="display: none;">
+						<!--- http://i.gyazo.com/465745da712531791bb6f6df8ec85788.png : Ya que el texto no cabe, se me ha ocurrido hacer que cuando se haga hover se muestre una pequeña descripción (y así se podrá escribir más) (algo como lo que hago en las Skills) -->
+						<div> <!--- 7x7 -->
+							<div onmousemove="javascript: show(this.childNodes[1])+followPos(this.childNodes[1]);" onmouseout="javascript: hide(this.childNodes[1]);">Nombre<div>Desc</div></div>
+							<div onmousemove="javascript: show(this.childNodes[1])+followPos(this.childNodes[1]);" onmouseout="javascript: hide(this.childNodes[1]);">Nombre<div>Desc</div></div>
+							<div onmousemove="javascript: show(this.childNodes[1])+followPos(this.childNodes[1]);" onmouseout="javascript: hide(this.childNodes[1]);">Nombre<div>Desc</div></div>
+							<div onmousemove="javascript: show(this.childNodes[1])+followPos(this.childNodes[1]);" onmouseout="javascript: hide(this.childNodes[1]);">Nombre<div>Desc</div></div>
+							<div onmousemove="javascript: show(this.childNodes[1])+followPos(this.childNodes[1]);" onmouseout="javascript: hide(this.childNodes[1]);">Nombre<div>Desc</div></div>
+							<div onmousemove="javascript: show(this.childNodes[1])+followPos(this.childNodes[1]);" onmouseout="javascript: hide(this.childNodes[1]);">Nombre<div>Desc</div></div>
+							<div onmousemove="javascript: show(this.childNodes[1])+followPos(this.childNodes[1]);" onmouseout="javascript: hide(this.childNodes[1]);">Nombre<div>Desc</div></div>
+							<div onmousemove="javascript: show(this.childNodes[1])+followPos(this.childNodes[1]);" onmouseout="javascript: hide(this.childNodes[1]);">Nombre<div>Desc</div></div>
+							<div onmousemove="javascript: show(this.childNodes[1])+followPos(this.childNodes[1]);" onmouseout="javascript: hide(this.childNodes[1]);">Nombre<div>Desc</div></div>
+							<div onmousemove="javascript: show(this.childNodes[1])+followPos(this.childNodes[1]);" onmouseout="javascript: hide(this.childNodes[1]);">Nombre<div>Desc</div></div>
+							<div onmousemove="javascript: show(this.childNodes[1])+followPos(this.childNodes[1]);" onmouseout="javascript: hide(this.childNodes[1]);">Nombre<div>Desc</div></div>
+							<div onmousemove="javascript: show(this.childNodes[1])+followPos(this.childNodes[1]);" onmouseout="javascript: hide(this.childNodes[1]);">Nombre<div>Desc</div></div>
+							<div onmousemove="javascript: show(this.childNodes[1])+followPos(this.childNodes[1]);" onmouseout="javascript: hide(this.childNodes[1]);">Nombre<div>Desc</div></div>
+							<div onmousemove="javascript: show(this.childNodes[1])+followPos(this.childNodes[1]);" onmouseout="javascript: hide(this.childNodes[1]);">Nombre<div>Desc</div></div>
+							<div onmousemove="javascript: show(this.childNodes[1])+followPos(this.childNodes[1]);" onmouseout="javascript: hide(this.childNodes[1]);">Nombre<div>Desc</div></div>
+							<div onmousemove="javascript: show(this.childNodes[1])+followPos(this.childNodes[1]);" onmouseout="javascript: hide(this.childNodes[1]);">Nombre<div>Desc</div></div>
+							<div onmousemove="javascript: show(this.childNodes[1])+followPos(this.childNodes[1]);" onmouseout="javascript: hide(this.childNodes[1]);">Nombre<div>Desc</div></div>
+							<div onmousemove="javascript: show(this.childNodes[1])+followPos(this.childNodes[1]);" onmouseout="javascript: hide(this.childNodes[1]);">Nombre<div>Desc</div></div>
+							<div onmousemove="javascript: show(this.childNodes[1])+followPos(this.childNodes[1]);" onmouseout="javascript: hide(this.childNodes[1]);">Nombre<div>Desc</div></div>
+							<div onmousemove="javascript: show(this.childNodes[1])+followPos(this.childNodes[1]);" onmouseout="javascript: hide(this.childNodes[1]);">Nombre<div>Desc</div></div>
+							<div onmousemove="javascript: show(this.childNodes[1])+followPos(this.childNodes[1]);" onmouseout="javascript: hide(this.childNodes[1]);">Nombre<div>Desc</div></div>
+						</div>
+					</div>
+					<div id="store" class="menuInfo">
+						
+					</div>
+				</div>
+				<div id="inv" class="inventory">
+					<span class="title" style="position: relative;font-family: Cambria;font-size: 15px;margin: -17px 0 0 0;">Inventario</span>
+					<span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span>
+					<div class="hotbar">
+						<span class="hand"></span>
+						<span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span>
+						<span class="hand"></span>
+					</div>
+				</div>
+			</div>
+			<div id="pauseMenu" style="display: none;"></div>
+		</div>
+	</body>
+</html>

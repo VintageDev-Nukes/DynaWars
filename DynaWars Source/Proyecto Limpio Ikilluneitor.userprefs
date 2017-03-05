@@ -1,0 +1,18 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\resources\src\GameGUI\MainThread.cs">
+    <Files>
+      <File FileName="Assets\resources\src\GameGUI\GameGUIindex.cs" Line="1" Column="1" />
+      <File FileName="Assets\resources\src\OptionsMenu\Options.cs" Line="1" Column="1" />
+      <File FileName="Assets\resources\src\InputManager\mInput.cs" Line="35" Column="16" />
+      <File FileName="Assets\resources\src\SaveManager\SaveManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\resources\src\Main Menu\MainGUI.cs" Line="38" Column="9" />
+      <File FileName="Assets\resources\src\GameGUI\MainThread.cs" Line="17" Column="56" />
+      <File FileName="Assets\resources\src\DamageSystem\DamageSystem.cs" Line="167" Column="29" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

@@ -1,0 +1,16 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\build system\Assets\Scripts\Build System\StructList.cs">
+    <Files>
+      <File FileName="..\..\..\build system\Assets\Scripts\Build System\BuildScript.cs" Line="151" Column="11" />
+      <File FileName="..\..\..\build system\Assets\Scripts\Build System\StructList.cs" Line="5" Column="56" />
+      <File FileName="..\..\..\build system\Assets\Scripts\Build System\FloorScript.cs" Line="30" Column="105" />
+      <File FileName="..\..\..\build system\Assets\Scripts\Build System\StructScript.cs" Line="22" Column="106" />
+      <File FileName="..\..\..\build system\Assets\Scripts\Build System\WallScript.cs" Line="13" Column="28" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

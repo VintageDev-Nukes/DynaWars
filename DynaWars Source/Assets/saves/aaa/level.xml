@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-16"?>
+<SaveProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <lvlName>aaa</lvlName>
+  <playerPos>
+    <x>332.440674</x>
+    <y>18.7680912</y>
+    <z>-569.8675</z>
+  </playerPos>
+  <playerRot>
+    <x>0</x>
+    <y>230.25032</y>
+    <z>0</z>
+  </playerRot>
+  <seed>873</seed>
+  <strSeed>aaa</strSeed>
+  <maxHealth>100</maxHealth>
+  <maxEnergy>100</maxEnergy>
+  <maxThirst>100</maxThirst>
+  <maxHunger>100</maxHunger>
+  <health>32</health>
+  <energy>100.057144</energy>
+  <thirst>94.21193</thirst>
+  <hunger>92.2776947</hunger>
+  <playerMoney>95</playerMoney>
+  <skillPoints>31</skillPoints>
+  <playerLvl>28</playerLvl>
+  <playerExp>0</playerExp>
+  <currentHour>0.5202459</currentHour>
+  <skillColletion>
+    <SafeSkill>
+      <name>survival</name>
+      <lvl>0</lvl>
+    </SafeSkill>
+    <SafeSkill>
+      <name>endurance</name>
+      <lvl>0</lvl>
+    </SafeSkill>
+    <SafeSkill>
+      <name>energy_restore</name>
+      <lvl>0</lvl>
+    </SafeSkill>
+    <SafeSkill>
+      <name>sneaky</name>
+      <lvl>0</lvl>
+    </SafeSkill>
+    <SafeSkill>
+      <name>accuracy</name>
+      <lvl>0</lvl>
+    </SafeSkill>
+    <SafeSkill>
+      <name>assassin</name>
+      <lvl>0</lvl>
+    </SafeSkill>
+    <SafeSkill>
+      <name>collector</name>
+      <lvl>0</lvl>
+    </SafeSkill>
+    <SafeSkill>
+      <name>knowledge</name>
+      <lvl>0</lvl>
+    </SafeSkill>
+    <SafeSkill>
+      <name>immunity</name>
+      <lvl>0</lvl>
+    </SafeSkill>
+    <SafeSkill>
+      <name>maxload</name>
+      <lvl>10</lvl>
+    </SafeSkill>
+    <SafeSkill>
+      <name>purchaser</name>
+      <lvl>0</lvl>
+    </SafeSkill>
+    <SafeSkill>
+      <name>stronger</name>
+      <lvl>0</lvl>
+    </SafeSkill>
+    <SafeSkill>
+      <name>invoker</name>
+      <lvl>0</lvl>
+    </SafeSkill>
+    <SafeSkill>
+      <name>friendly</name>
+      <lvl>0</lvl>
+    </SafeSkill>
+    <SafeSkill>
+      <name>discounts</name>
+      <lvl>0</lvl>
+    </SafeSkill>
+    <SafeSkill>
+      <name>hability</name>
+      <lvl>0</lvl>
+    </SafeSkill>
+    <SafeSkill>
+      <name>morejump</name>
+      <lvl>0</lvl>
+    </SafeSkill>
+    <SafeSkill>
+      <name>runner</name>
+      <lvl>0</lvl>
+    </SafeSkill>
+    <SafeSkill>
+      <name>lucky</name>
+      <lvl>0</lvl>
+    </SafeSkill>
+    <SafeSkill>
+      <name>ironskin</name>
+      <lvl>0</lvl>
+    </SafeSkill>
+    <SafeSkill>
+      <name>though</name>
+      <lvl>0</lvl>
+    </SafeSkill>
+    <SafeSkill>
+      <name>vitality</name>
+      <lvl>0</lvl>
+    </SafeSkill>
+    <SafeSkill>
+      <name>regeneration</name>
+      <lvl>0</lvl>
+    </SafeSkill>
+    <SafeSkill>
+      <name>courage</name>
+      <lvl>0</lvl>
+    </SafeSkill>
+    <SafeSkill>
+      <name>terrorist</name>
+      <lvl>0</lvl>
+    </SafeSkill>
+    <SafeSkill>
+      <name>gunner</name>
+      <lvl>0</lvl>
+    </SafeSkill>
+    <SafeSkill>
+      <name>junkie</name>
+      <lvl>0</lvl>
+    </SafeSkill>
+    <SafeSkill>
+      <name>teacher</name>
+      <lvl>0</lvl>
+    </SafeSkill>
+    <SafeSkill>
+      <name>driver</name>
+      <lvl>0</lvl>
+    </SafeSkill>
+    <SafeSkill>
+      <name>diver</name>
+      <lvl>0</lvl>
+    </SafeSkill>
+    <SafeSkill>
+      <name>wizard</name>
+      <lvl>0</lvl>
+    </SafeSkill>
+    <SafeSkill>
+      <name>calm</name>
+      <lvl>0</lvl>
+    </SafeSkill>
+    <SafeSkill>
+      <name>uncraft</name>
+      <lvl>0</lvl>
+    </SafeSkill>
+    <SafeSkill>
+      <name>noclip</name>
+      <lvl>0</lvl>
+    </SafeSkill>
+    <SafeSkill>
+      <name>godmode</name>
+      <lvl>0</lvl>
+    </SafeSkill>
+  </skillColletion>
+  <slots>
+    <HotBarSlots>
+      <SafeInvItem>
+        <worldObject>Assets/resources/Models/Items/Guns/MP5/MP5.prefab</worldObject>
+        <id>66</id>
+        <itemname>MP5</itemname>
+        <DisplayName>MP5</DisplayName>
+        <Description />
+        <itemtex>Assets/resources/textures/Items/Guns/MP5.png</itemtex>
+        <itemtype>Gun</itemtype>
+        <usable>None</usable>
+        <weight>1</weight>
+        <droppable>true</droppable>
+        <itemstacksize>1</itemstacksize>
+        <itemstacklimit>1</itemstacklimit>
+        <showStack>false</showStack>
+        <TcustomPostion>
+          <x>-0.03994608</x>
+          <y>-0.01932887</y>
+          <z>-0.1486245</z>
+        </TcustomPostion>
+        <TcustomRotation>
+          <x>21</x>
+          <y>12</y>
+          <z>103</z>
+        </TcustomRotation>
+        <TcustomScale>
+          <x>0.5</x>
+          <y>0.5</y>
+          <z>0.5</z>
+        </TcustomScale>
+        <FcustomPostion>
+          <x>0</x>
+          <y>0</y>
+          <z>0</z>
+        </FcustomPostion>
+        <FcustomRotation>
+          <x>0</x>
+          <y>-180</y>
+          <z>-180</z>
+        </FcustomRotation>
+        <FcustomScale>
+          <x>0.5</x>
+          <y>0.5</y>
+          <z>0.5</z>
+        </FcustomScale>
+        <dropObject>Assets/resources/Models/Items/Guns/MP5/MP5.prefab</dropObject>
+        <shopValue>0</shopValue>
+      </SafeInvItem>
+      <SafeInvItem>
+        <worldObject>Assets/resources/Models/Items/Guns/SawnOff/SawnOff.prefab</worldObject>
+        <id>65</id>
+        <itemname>SawnOff</itemname>
+        <DisplayName>Sawn-Off Shotgun</DisplayName>
+        <Description />
+        <itemtex>Assets/resources/textures/Items/Guns/SawnOff.png</itemtex>
+        <itemtype>Gun</itemtype>
+        <usable>None</usable>
+        <weight>0</weight>
+        <droppable>true</droppable>
+        <itemstacksize>1</itemstacksize>
+        <itemstacklimit>1</itemstacklimit>
+        <showStack>false</showStack>
+        <TcustomPostion>
+          <x>-0.1256181</x>
+          <y>0.1603842</y>
+          <z>-0.1737731</z>
+        </TcustomPostion>
+        <TcustomRotation>
+          <x>44</x>
+          <y>33</y>
+          <z>296</z>
+        </TcustomRotation>
+        <TcustomScale>
+          <x>0.07</x>
+          <y>0.07</y>
+          <z>0.05</z>
+        </TcustomScale>
+        <FcustomPostion>
+          <x>0.3671382</x>
+          <y>9241129</y>
+          <z>0.5188492</z>
+        </FcustomPostion>
+        <FcustomRotation>
+          <x>0</x>
+          <y>185</y>
+          <z>0</z>
+        </FcustomRotation>
+        <FcustomScale>
+          <x>0.07</x>
+          <y>0.07</y>
+          <z>0.05</z>
+        </FcustomScale>
+        <dropObject>Assets/resources/Models/Items/Guns/SawnOff/SawnOff.prefab</dropObject>
+        <shopValue>0</shopValue>
+      </SafeInvItem>
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+    </HotBarSlots>
+    <InventorySlots>
+      <SafeInvItem>
+        <worldObject>Assets/resources/Models/Items/Guns/MP5/MP5.prefab</worldObject>
+        <id>66</id>
+        <itemname>MP5</itemname>
+        <DisplayName>MP5</DisplayName>
+        <Description />
+        <itemtex>Assets/resources/textures/Items/Guns/MP5.png</itemtex>
+        <itemtype>Gun</itemtype>
+        <usable>None</usable>
+        <weight>1</weight>
+        <droppable>true</droppable>
+        <itemstacksize>1</itemstacksize>
+        <itemstacklimit>1</itemstacklimit>
+        <showStack>false</showStack>
+        <TcustomPostion>
+          <x>-0.03994608</x>
+          <y>-0.01932887</y>
+          <z>-0.1486245</z>
+        </TcustomPostion>
+        <TcustomRotation>
+          <x>21</x>
+          <y>12</y>
+          <z>103</z>
+        </TcustomRotation>
+        <TcustomScale>
+          <x>0.5</x>
+          <y>0.5</y>
+          <z>0.5</z>
+        </TcustomScale>
+        <FcustomPostion>
+          <x>0</x>
+          <y>0</y>
+          <z>0</z>
+        </FcustomPostion>
+        <FcustomRotation>
+          <x>0</x>
+          <y>-180</y>
+          <z>-180</z>
+        </FcustomRotation>
+        <FcustomScale>
+          <x>0.5</x>
+          <y>0.5</y>
+          <z>0.5</z>
+        </FcustomScale>
+        <dropObject>Assets/resources/Models/Items/Guns/MP5/MP5.prefab</dropObject>
+        <shopValue>0</shopValue>
+      </SafeInvItem>
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+    </InventorySlots>
+    <AmmoSlots>
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+    </AmmoSlots>
+    <Accesories>
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+      <SafeInvItem xsi:nil="true" />
+    </Accesories>
+  </slots>
+</SaveProfile>

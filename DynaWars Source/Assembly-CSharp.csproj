@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{371AF107-C589-F1F5-03D9-262B48810B8B}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_5_5;UNITY_4_5;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\HandyHands\scripts\VisualizeJoint.cs" />
+     <Compile Include="Assets\HandyHands\scripts\showcasecam.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Constants.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Generation\Cache.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Generation\Combination\Add.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Generation\Combination\Blend.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Generation\Combination\Max.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Generation\Combination\Min.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Generation\Combination\Multiply.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Generation\Constant.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Generation\Displacement\Perturb.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Generation\Displacement\Rotate.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Generation\Displacement\Scale.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Generation\Displacement\Translate.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Generation\Displacement\Turbulence.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Generation\Fractal\BillowNoise.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Generation\Fractal\FractalNoiseBase.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Generation\Fractal\PinkNoise.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Generation\Fractal\RidgeNoise.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Generation\Function.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Generation\GradientNoise.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Generation\GradientNoise2D.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Generation\Modification\Bias.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Generation\Modification\Binarize.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Generation\Modification\Curve.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Generation\Modification\Gain.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Generation\Modification\Modify.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Generation\Patterns\Cylinders.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Generation\Patterns\Helpers.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Generation\Patterns\Planes.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Generation\Patterns\Spheres.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Generation\Patterns\TexturePattern.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Generation\ValueNoise.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Generation\ValueNoise2D.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Generation\Voronoi\VoronoiCells.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Generation\Voronoi\VoronoiCells2D.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Generation\Voronoi\VoronoiDiagramBase.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Generation\Voronoi\VoronoiDiagramBase2D.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Generation\Voronoi\VoronoiPits.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Generation\Voronoi\VoronoiPits2D.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Generation\Voronoi\VoronoiValleys.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Generation\Voronoi\VoronoiValleys2D.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Generator.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Interpolation\CosineSCurve.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Interpolation\CubicSCurve.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Interpolation\LinearSCurve.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Interpolation\QuinticSCurve.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Interpolation\SCurve.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\LatticeNoise.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\NoiseEx.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Properties\AssemblyInfo.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\SimplexNoise.cs" />
+     <Compile Include="Assets\resources\src\CoherentNoise\Texturing\TextureMaker.cs" />
+     <Compile Include="Assets\resources\src\CommandLineCustomArguments\CommandLineReader.cs" />
+     <Compile Include="Assets\resources\src\Craft System\CraftSystem.cs" />
+     <Compile Include="Assets\resources\src\Craft System\CraftingStation.cs" />
+     <Compile Include="Assets\resources\src\Craft System\PCraftScript.cs" />
+     <Compile Include="Assets\resources\src\DamageSystem\DamageSystem.cs" />
+     <Compile Include="Assets\resources\src\DamageSystem\DamageText.cs" />
+     <Compile Include="Assets\resources\src\DayNight\DayNightController.cs" />
+     <Compile Include="Assets\resources\src\DecalSystem\DecalSystem.cs" />
+     <Compile Include="Assets\resources\src\DropSystem\Drop.cs" />
+     <Compile Include="Assets\resources\src\DropSystem\DropScript.cs" />
+     <Compile Include="Assets\resources\src\Enemy\AIScript.cs" />
+     <Compile Include="Assets\resources\src\Enemy\WaypointScript.cs" />
+     <Compile Include="Assets\resources\src\Extension\AudioExt.cs" />
+     <Compile Include="Assets\resources\src\Extension\ColorExt.cs" />
+     <Compile Include="Assets\resources\src\Extension\DelaySystem.cs" />
+     <Compile Include="Assets\resources\src\Extension\DictionaryExt.cs" />
+     <Compile Include="Assets\resources\src\Extension\GUIExt.cs" />
+     <Compile Include="Assets\resources\src\Extension\GameObjectExtension.cs" />
+     <Compile Include="Assets\resources\src\Extension\RagdollBuilder.cs" />
+     <Compile Include="Assets\resources\src\Extension\RagdollExt.cs" />
+     <Compile Include="Assets\resources\src\Extension\RandomExt.cs" />
+     <Compile Include="Assets\resources\src\Extension\SeedExtension.cs" />
+     <Compile Include="Assets\resources\src\Extension\TextExt.cs" />
+     <Compile Include="Assets\resources\src\Extension\TextureExt.cs" />
+     <Compile Include="Assets\resources\src\Extension\TransformExt.cs" />
+     <Compile Include="Assets\resources\src\Extension\Vector3Ext.cs" />
+     <Compile Include="Assets\resources\src\GameGUI\CommandPrompt.cs" />
+     <Compile Include="Assets\resources\src\GameGUI\Console.cs" />
+     <Compile Include="Assets\resources\src\GameGUI\DrawCircles\DrawCircle.cs" />
+     <Compile Include="Assets\resources\src\GameGUI\GameGUI.cs" />
+     <Compile Include="Assets\resources\src\GameGUI\GameGUIindex.cs" />
+     <Compile Include="Assets\resources\src\GameGUI\HUD\FPS.cs" />
+     <Compile Include="Assets\resources\src\GameGUI\MainThread.cs" />
+     <Compile Include="Assets\resources\src\GameGUI\RetrieveDebug.cs" />
+     <Compile Include="Assets\resources\src\GameGUI\TakeScreenShot.cs" />
+     <Compile Include="Assets\resources\src\GunSystem\GunSystem.cs" />
+     <Compile Include="Assets\resources\src\HandScript\HandScript.cs" />
+     <Compile Include="Assets\resources\src\HandScript\HandSystem.cs" />
+     <Compile Include="Assets\resources\src\InputManager\mInput.cs" />
+     <Compile Include="Assets\resources\src\InvSystem\GunMovement.cs" />
+     <Compile Include="Assets\resources\src\InvSystem\Inventory.cs" />
+     <Compile Include="Assets\resources\src\InvSystem\ItemScript.cs" />
+     <Compile Include="Assets\resources\src\InvSystem\ItemTypes\AmmoScript.cs" />
+     <Compile Include="Assets\resources\src\InvSystem\ItemTypes\BulletScript.cs" />
+     <Compile Include="Assets\resources\src\InvSystem\ItemTypes\GunScript.cs" />
+     <Compile Include="Assets\resources\src\InvSystem\ItemTypes\MoneyScript.cs" />
+     <Compile Include="Assets\resources\src\LangSystem\LTrans.cs" />
+     <Compile Include="Assets\resources\src\LangSystem\LangSystem.cs" />
+     <Compile Include="Assets\resources\src\LevelSystem\LevelSystem.cs" />
+     <Compile Include="Assets\resources\src\LevelSystem\SkillSystem.cs" />
+     <Compile Include="Assets\resources\src\Main Menu\FlyCamera.cs" />
+     <Compile Include="Assets\resources\src\Main Menu\MainGUI.cs" />
+     <Compile Include="Assets\resources\src\Main Menu\SelectGameGUI.cs" />
+     <Compile Include="Assets\resources\src\Main Menu\SimplexNoise.cs" />
+     <Compile Include="Assets\resources\src\Main Menu\TerrainControl.cs" />
+     <Compile Include="Assets\resources\src\MoneySystem\MoneySystem.cs" />
+     <Compile Include="Assets\resources\src\MsgBox\CorruptedSmileStudioAPI.cs" />
+     <Compile Include="Assets\resources\src\MsgBox\MessageBox.cs" />
+     <Compile Include="Assets\resources\src\NPC System\NPCSystem.cs" />
+     <Compile Include="Assets\resources\src\OptionsMenu\Options.cs" />
+     <Compile Include="Assets\resources\src\PerlinNoise\MeshExtrusion.cs" />
+     <Compile Include="Assets\resources\src\PerlinNoise\Perlin.cs" />
+     <Compile Include="Assets\resources\src\Player System\DetectCol.cs" />
+     <Compile Include="Assets\resources\src\Player System\MoveLook.cs" />
+     <Compile Include="Assets\resources\src\Player System\PlayerSystem.cs" />
+     <Compile Include="Assets\resources\src\Player System\PlayerSystemindex.cs" />
+     <Compile Include="Assets\resources\src\Player System\PunchScript.cs" />
+     <Compile Include="Assets\resources\src\ProfileSystem\Profile.cs" />
+     <Compile Include="Assets\resources\src\RadarSystem\RadarSystem.cs" />
+     <Compile Include="Assets\resources\src\SaveManager\SaveProfile.cs" />
+     <Compile Include="Assets\resources\src\Serializer\Serializer.cs" />
+     <Compile Include="Assets\resources\src\SpawnSystem\SpawnSystem.cs" />
+     <Compile Include="Assets\resources\src\SpawnSystem\SpawnSystemindex.cs" />
+     <Compile Include="Assets\resources\src\Water System\WaterSystem.cs" />
+     <Compile Include="Assets\resources\src\Water System\WaterSystemindex.cs" />
+     <Compile Include="Assets\resources\src\WaypointSystem\WPSystem.cs" />
+     <Compile Include="Assets\resources\src\WaypointSystem\WaypointIndexer.cs" />
+     <Compile Include="Assets\resources\src\WaypointSystem\WaypointLib.cs" />
+     <Compile Include="Assets\resources\src\WaypointSystem\WaypointRenderer.cs" />
+     <Compile Include="Assets\resources\src\WorldGen\TerrainGenerator.cs" />
+     <Compile Include="Assets\resources\src\WorldGen\WorldGen.cs" />
+     <Compile Include="Assets\resources\src\WorldGen\WorldGenerator.cs" />
+     <Compile Include="Assets\resources\src\WorldGen\WorldGeneratorindex.cs" />
+     <Compile Include="Assets\resources\src\XMLTools\XMLTools.cs" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendOneOne.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseEffectShaderRGB.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
+     <None Include="Assets\Plugins\Thinksquirrel Software\OpenGameConsole\Resources\man_version.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ShowAlphaChannel.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlowConeTap.shader" />
+     <None Include="Assets\resources\shaders\TexTint.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\SunShaftsComposite.shader" />
+     <None Include="Assets\ItemBase.xml" />
+     <None Include="Assets\Standard Assets\DayNightCycle\TOD\shader\SkyboxBlend.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionCurves.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ScreenSpaceAmbientObscurance.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\NFAA.shader" />
+     <None Include="Assets\Plugins\Thinksquirrel Software\OpenGameConsole\Resources\man_ogc.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\TiltShiftHdrLensBlur.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\VignetteShader.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\DepthOfFieldScatter.shader" />
+     <None Include="Assets\Plugins\Thinksquirrel Software\OpenGameConsole\DB\inactive-commands.xml" />
+     <None Include="Assets\Profiles\test\profile.xml" />
+     <None Include="Assets\resources\shaders\miniMapShader.shader" />
+     <None Include="Assets\resources\shaders\invHUDShader.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\MotionBlur.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\MobileBloom.shader" />
+     <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlowCompose.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\Contrast Stretch\MinMaxReduction.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\SSAA.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\RadialBlur.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\DepthOfFieldDX11.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ContrastComposite.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAAPreset3.shader" />
+     <None Include="Assets\Plugins\Thinksquirrel Software\OpenGameConsole\Resources\man_man.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\FisheyeShader.shader" />
+     <None Include="Assets\Plugins\Thinksquirrel Software\OpenGameConsole\Resources\man_time.txt" />
+     <None Include="Assets\Plugins\Thinksquirrel Software\OpenGameConsole\Resources\active-commands.xml" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\Contrast Stretch\Apply.shader" />
+     <None Include="Assets\Plugins\Thinksquirrel Software\OpenGameConsole\Resources\man_clear.txt" />
+     <None Include="Assets\Standard Assets\Water (Pro Only)\Water4\Sources\Shaders\FX-SimpleWater4.shader" />
+     <None Include="Assets\Plugins\Thinksquirrel Software\OpenGameConsole\!LICENSE\LICENCSE.txt" />
+     <None Include="Assets\Plugins\Thinksquirrel Software\OpenGameConsole\Resources\man_get.txt" />
+     <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
+     <None Include="Assets\Plugins\Thinksquirrel Software\OpenGameConsole\Resources\man_listobjects.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\frag_ao.cginc" />
+     <None Include="Assets\resources\shaders\bigMap.shader" />
+     <None Include="Assets\HandyHands\shaders\handyskin.shader" />
+     <None Include="Assets\Plugins\Thinksquirrel Software\OpenGameConsole\DB\inactive-aliases.xml" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\DepthOfField34.shader" />
+     <None Include="Assets\Plugins\Thinksquirrel Software\OpenGameConsole\Resources\man_send.txt" />
+     <None Include="Assets\saves\aaaa\level.xml" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\MobileBlur.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\SSAOShader.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ConvertDepth.shader" />
+     <None Include="Assets\Plugins\Thinksquirrel Software\OpenGameConsole\Resources\man_gc.txt" />
+     <None Include="Assets\Plugins\Thinksquirrel Software\OpenGameConsole\Resources\man_loc.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionCurvesSimple.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseEffectShaderYUV.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlowEffectDownsample.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\CreaseApply.shader" />
+     <None Include="Assets\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
+     <None Include="Assets\Plugins\Thinksquirrel Software\OpenGameConsole\Resources\man_echo.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ChromaticAberrationShader.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlobalFog.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\Contrast Stretch\Luminance.shader" />
+     <None Include="Assets\resources\src\SaveManager\SaveManagerJS.txt" />
+     <None Include="Assets\resources\Models\Items\Guns\Grenades\READ THIS FIRST!!!!!!!.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionSelective.shader" />
+     <None Include="Assets\Plugins\Thinksquirrel Software\OpenGameConsole\Resources\active-aliases.xml" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\Bokeh34.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\CameraMotionBlurDX11.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\SeparableBlurPlus.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\MultiPassHollywoodFlares.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\BlurEffectConeTaps.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\CameraMotionBlur.shader" />
+     <None Include="Assets\Standard Assets\Water (Pro Only)\Sources\Shaders\FX-Water.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\DLAA.shader" />
+     <None Include="Assets\resources\src\SaveManager\SaveManagerCS.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseAndGrainDX11.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BrightPassFilter2.shader" />
+     <None Include="Assets\Plugins\Thinksquirrel Software\OpenGameConsole\Resources\man_physics.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\SeparableBlur.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\MotionBlurClear.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionEffect.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GrayscaleEffect.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\SepiaToneEffect.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\TwirlEffect.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\VortexEffect.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\Contrast Stretch\Adaptation.shader" />
+     <None Include="Assets\resources\src\InvSystem\ScrapInventory.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseAndGrain.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\VignettingShader.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\Tonemapper.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BrightPassFilter.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAA2.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrection3DLut.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\LensFlareCreate.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\EdgeDetectNormals.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\PrepareSunShaftsBlur.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\Blend.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\BlendModesOverlay.shader" />
+     <None Include="Assets\Standard Assets\Water (Pro Only)\Water4\Sources\Shaders\WaterInclude.cginc" />
+     <None Include="Assets\Standard Assets\Water (Pro Only)\Water4\Sources\Shaders\FX-Water4.shader" />
+     <None Include="Assets\Plugins\Thinksquirrel Software\OpenGameConsole\Resources\man_move.txt" />
+     <None Include="Assets\saves\aaa\level.xml" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\SimpleClear.shader" />
+     <None Include="Assets\HandyHands\readme.txt" />
+     <None Include="Assets\Plugins\Thinksquirrel Software\OpenGameConsole\Resources\man_run.txt" />
+     <None Include="Assets\resources\Models\Items\Guns\Weapon Pack\ReadMe.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAA3Console.shader" />
+     <None Include="Assets\resources\Models\Items\Guns\Steyr AUG\Steyr AUG\ReadMe.txt" />
+     <None Include="Assets\Plugins\Thinksquirrel Software\OpenGameConsole\Resources\man_mv.txt" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAAPreset2.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
+     <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendForBloom.shader" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{FA5A22D3-C0F4-1647-A30D-B5DB7DEC1A49}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
+      <Project>{ABE846E2-B8A6-3F0B-FEB6-EF19A443CA0A}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>

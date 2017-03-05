@@ -1,0 +1,69 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{F8D6011D-B8E0-97CF-9962-317D3269C93C}") = "Proyecto Limpio Ikilluneitor", "Assembly-CSharp-firstpass.csproj", "{E76E8FAB-7359-BFCF-B48F-20B94CDF1525}"
+EndProject
+Project("{F8D6011D-B8E0-97CF-9962-317D3269C93C}") = "Proyecto Limpio Ikilluneitor", "Assembly-CSharp.csproj", "{75B3DA13-5433-0B24-655D-0F8E105AE4FD}"
+EndProject
+Project("{F8D6011D-B8E0-97CF-9962-317D3269C93C}") = "Proyecto Limpio Ikilluneitor", "Assembly-CSharp-Editor.csproj", "{6DD3E132-258C-07AD-50D5-8AD017C94EE6}"
+EndProject
+Project("{F8D6011D-B8E0-97CF-9962-317D3269C93C}") = "Proyecto Limpio Ikilluneitor", "Assembly-UnityScript-firstpass.unityproj", "{ABCAC87C-CB3A-7F5A-0716-53F5DB7FE264}"
+EndProject
+Project("{F8D6011D-B8E0-97CF-9962-317D3269C93C}") = "Proyecto Limpio Ikilluneitor", "Assembly-UnityScript.unityproj", "{31C855A7-66D8-964B-C54E-A3598762549E}"
+EndProject
+Project("{F8D6011D-B8E0-97CF-9962-317D3269C93C}") = "Proyecto Limpio Ikilluneitor", "Assembly-UnityScript-Editor.unityproj", "{7A36BDBE-19C4-56DA-EB61-B38DC9B52AC6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E76E8FAB-7359-BFCF-B48F-20B94CDF1525}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E76E8FAB-7359-BFCF-B48F-20B94CDF1525}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E76E8FAB-7359-BFCF-B48F-20B94CDF1525}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E76E8FAB-7359-BFCF-B48F-20B94CDF1525}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75B3DA13-5433-0B24-655D-0F8E105AE4FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75B3DA13-5433-0B24-655D-0F8E105AE4FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75B3DA13-5433-0B24-655D-0F8E105AE4FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75B3DA13-5433-0B24-655D-0F8E105AE4FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DD3E132-258C-07AD-50D5-8AD017C94EE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DD3E132-258C-07AD-50D5-8AD017C94EE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DD3E132-258C-07AD-50D5-8AD017C94EE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DD3E132-258C-07AD-50D5-8AD017C94EE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABCAC87C-CB3A-7F5A-0716-53F5DB7FE264}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABCAC87C-CB3A-7F5A-0716-53F5DB7FE264}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABCAC87C-CB3A-7F5A-0716-53F5DB7FE264}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABCAC87C-CB3A-7F5A-0716-53F5DB7FE264}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31C855A7-66D8-964B-C54E-A3598762549E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31C855A7-66D8-964B-C54E-A3598762549E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31C855A7-66D8-964B-C54E-A3598762549E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31C855A7-66D8-964B-C54E-A3598762549E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A36BDBE-19C4-56DA-EB61-B38DC9B52AC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A36BDBE-19C4-56DA-EB61-B38DC9B52AC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A36BDBE-19C4-56DA-EB61-B38DC9B52AC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A36BDBE-19C4-56DA-EB61-B38DC9B52AC6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+																																																																																																																																																																																																																										GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+		Policies = $0
+		$0.TextStylePolicy = $1
+		$1.inheritsSet = null
+		$1.scope = text/x-csharp
+		$0.CSharpFormattingPolicy = $2
+		$2.inheritsSet = Mono
+		$2.inheritsScope = text/x-csharp
+		$2.scope = text/x-csharp
+		$0.TextStylePolicy = $3
+		$3.FileWidth = 120
+		$3.TabWidth = 4
+		$3.EolMarker = Unix
+		$3.inheritsSet = Mono
+		$3.inheritsScope = text/plain
+		$3.scope = text/plain
+	EndGlobalSection
+
+EndGlobal

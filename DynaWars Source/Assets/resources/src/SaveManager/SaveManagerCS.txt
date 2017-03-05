@@ -1,0 +1,458 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.IO;
+using System.Text.RegularExpressions;
+using Debug = UnityEngine.Debug;
+
+// Original name: [ INI File Manager ]
+// [ Save Manager]
+//
+// // By Elektro H@cker
+// // Link: http://foro.elhacker.net/net/libreria_de_snippets_posteen_aqui_sus_snippets-t378770.0.html;msg1903786#msg1903786
+// // Converted by Ikillnukes with developesFusion (http://www.developerfusion.com/tools/convert/vb-to-csharp/?batchId=7ef432be-b882-4d5f-b671-39dbb3aa5acf)
+
+#region " INI File Manager "
+
+public class INI_Manager
+{
+	
+	public static void Set_Value(string File, string ValueName, string Value)
+	{
+
+		try {
+			// Create a new INI File with "Key=Value""
+			if (!System.IO.File.Exists(File)) {
+
+				System.IO.File.WriteAllText(File, ValueName + "=" + Value);
+				return;
+
+			// Search line by line in the INI file for the "Key"
+			} else {
+
+				Int64 Line_Number = 0;
+				string[] strArray = System.IO.File.ReadAllLines(File);
+
+				foreach (string line_loopVariable in strArray) {
+					string line = line_loopVariable;
+					if (line.StartsWith(ValueName + "=")) {
+						strArray[Line_Number] = ValueName + "=" + Value;
+						System.IO.File.WriteAllLines(File, strArray);
+						// Replace "value"
+						return;
+					}
+					Line_Number += 1;
+				}
+
+				System.IO.File.AppendAllText(File, Environment.NewLine + ValueName + "=" + Value);
+				// Key don't exist, then create the new "Key=Value"
+
+			}
+
+		} catch (Exception ex) {
+			UnityEngine.Debug.Log(ex.Message);
+		}
+
+	}
+
+	public static string Load_Value(string ValueName, string File = "", string Text = "")
+	{
+
+
+		if(string.IsNullOrEmpty(File) && string.IsNullOrEmpty(Text)) {
+			UnityEngine.Debug.LogError("At least one of the two nullable parameters has to be filled.");
+			return null;
+		}
+
+		if(!string.IsNullOrEmpty(File) && !string.IsNullOrEmpty(Text)) {
+			UnityEngine.Debug.LogError("File and text cannot be in the same function called.");
+			return null;
+		}
+
+		if(!File.Equals(String.Empty)) {
+			if (!System.IO.File.Exists(File)) {
+				throw new Exception(File + " not found.");
+				// INI File not found.
+				#pragma warning disable
+				return null;
+				#pragma warning restore
+
+
+			} else {
+
+				string returnvalue = "";
+
+				foreach (string line_loopVariable in System.IO.File.ReadAllLines(File)) {
+					if (line_loopVariable.StartsWith(ValueName + "=")) {
+						returnvalue = line_loopVariable.Split('=').Last();
+					}
+				}
+
+				if(String.IsNullOrEmpty(returnvalue)) 
+				{
+
+					throw new Exception("Key: " + "\"" + ValueName + "\"" + " not found. On " + File);
+					// Key not found.
+					#pragma warning disable
+					return null;
+					#pragma warning restore
+
+				} else {
+
+					return returnvalue;
+
+				}
+
+			}
+		} else if(!Text.Equals(String.Empty)) {
+
+			string returnvalue = "";
+			
+			foreach(string line_loopVariable in Text.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries)) {
+				if (line_loopVariable.StartsWith(ValueName + "=")) {
+					returnvalue = line_loopVariable.Split('=').Last();
+				}
+			}
+			
+			if(String.IsNullOrEmpty(returnvalue)) 
+			{
+				
+				throw new Exception("Key: " + "\"" + ValueName + "\"" + " not found. On " + Text);
+				// Key not found.
+				#pragma warning disable
+				return null;
+				#pragma warning restore
+				
+			} else {
+				
+				return returnvalue;
+				
+			}
+
+		}
+
+		return null;
+
+	}
+
+
+	public static void Delete_Value(string File, string ValueName)
+	{
+
+		if (!System.IO.File.Exists(File)) {
+			throw new Exception(File + " not found.");
+			// INI File not found.
+			#pragma warning disable
+			return;
+			#pragma warning restore
+
+		} else {
+
+			try {
+				Int64 Line_Number = 0;
+				string[] strArray = System.IO.File.ReadAllLines(File);
+
+				foreach (string line_loopVariable in strArray) {
+					string line = line_loopVariable;
+					if (line.StartsWith(ValueName + "=")) {
+						strArray[Line_Number] = null;
+						break;
+					}
+					Line_Number += 1;
+				}
+
+				Array.Copy(strArray, Line_Number + 1, strArray, Line_Number, strArray.Length - Line_Number);
+				Array.Resize(ref strArray, strArray.Length);
+
+				System.IO.File.WriteAllText(File, string.Join(Environment.NewLine, strArray));
+
+			} catch (Exception ex) {
+				UnityEngine.Debug.Log(ex.Message);
+			}
+
+		}
+
+	}
+
+
+	public static void Sort_Values(string File)
+	{
+
+		if (!System.IO.File.Exists(File)) {
+			throw new Exception(File + " not found.");
+			// INI File not found.
+			#pragma warning disable
+			return;
+			#pragma warning restore
+
+		} else {
+
+			try {
+				Int64 Line_Number = 0;
+				string[] strArray = System.IO.File.ReadAllLines(File);
+				List<string> TempList = new List<string>();
+
+				foreach (string line in strArray) {
+					if (!string.IsNullOrEmpty(line))
+						TempList.Add(strArray[Line_Number]);
+					Line_Number += 1;
+				}
+
+				TempList.Sort();
+				System.IO.File.WriteAllLines(File, TempList.ToArray());
+
+			} catch (Exception ex) {
+				UnityEngine.Debug.Log(ex.Message);
+			}
+
+		}
+
+	}
+
+	public static void Create_Group(string File, string Name, Dictionary<string, string> Keys)
+	{
+		
+		if (!System.IO.File.Exists(File)) {
+			//Throw New Exception(File & " not found.")
+			
+			// INI File not found.
+			//Exit Sub
+			
+		}
+		
+		//Else
+		string strToPut = Name + " {" + Environment.NewLine;
+		foreach (KeyValuePair<string, string> item in Keys) {
+			strToPut += item.Key + "=" + item.Value + Environment.NewLine;
+		}
+		strToPut += "}";
+		System.IO.File.AppendAllText(File, strToPut);
+		//End If
+		
+	}
+	
+	public static string Read_Group(string Name, string File = "", string FromText = "")
+	{
+#pragma warning disable
+		if (string.IsNullOrEmpty(File) && string.IsNullOrEmpty(FromText)) {
+			throw new Exception("At least one of the two nullable parameters has to be filled.");
+			return null;
+		}
+		
+		if (!string.IsNullOrEmpty(File) && !string.IsNullOrEmpty(FromText)) {
+			throw new Exception("File and text cannot be in the same function called.");
+			return null;
+		}
+#pragma warning restore		
+		
+		if (!string.IsNullOrEmpty(File)) {
+			
+			if (!System.IO.File.Exists(File)) {
+				throw new Exception(File + " not found.");
+				
+				// INI File not found.
+				return null;
+				
+				
+			} else {
+				string AllText = System.IO.File.ReadAllText(File);
+				
+				MatchCollection enclosedText = Regex.Matches(AllText, "(?<=[\\{]).+(?=[\\}])", RegexOptions.Singleline);
+				
+				string Content = "";
+				
+				foreach (Match mth in enclosedText) {
+					Content += mth.Value;
+				}
+				
+				//AllText.Substring(AllText.IndexOf(Name + " {"), AllText.IndexOf("}", AllText.IndexOf(Name + " {")) - AllText.IndexOf(Name + " {"));
+				
+				
+				if (string.IsNullOrEmpty(Content)) {
+					throw new Exception("Key: " + "\"" + Name + "\"" + " not found.");
+					
+					// Key not found.
+					return null;
+					
+				} else {
+					return Content;
+				}
+				
+			}
+			
+		} else if (!string.IsNullOrEmpty(FromText)) {
+			MatchCollection enclosedText = Regex.Matches(FromText, "(?<=[\\{]).+(?=[\\}])", RegexOptions.Singleline);
+			
+			string Content = "";
+			
+			foreach (Match mth in enclosedText) {
+				Content += mth.Value;
+			}
+			
+			if (string.IsNullOrEmpty(Content)) {
+				throw new Exception("Key: " + "\"" + Name + "\"" + " not found.");
+				
+				// Key not found.
+				return null;
+				
+			} else {
+				return Content;
+			}
+		}
+		
+		return null;
+		
+	}
+	
+	
+	public static void Edit_Group(string File, string Name, Dictionary<string, string> KeysToSet)
+	{
+		if (KeysToSet.Count == 0) {
+			throw new Exception("Las claves a revisar no pueden ser un valor nulo.");
+		}
+		
+		//Get all from a file an compare them
+		
+		Dictionary<string, string> KeyToCompare = Extract_Keys("", Read_Group(Name, File));
+		
+		Dictionary<string, string> FinalKeyDic = new Dictionary<string, string>();
+				
+		foreach (KeyValuePair<string, string> item in KeysToSet) {
+			if (KeyToCompare.ContainsKey(item.Key) | !KeyToCompare.ContainsKey(item.Key)) {
+				FinalKeyDic.Add(item.Key, item.Value);
+				//Edit the key or add it, it doesn't matter
+			}
+			
+		}
+		
+		//But if the keytoset don't have the key from the default we have to add it.
+		
+		foreach (KeyValuePair<string, string> item in KeyToCompare.Except(KeysToSet)) {
+			try { //This try to add the key, if catch is catched that mean that the keys was only edited, so we don't need to set the old value ;)
+				FinalKeyDic.Add(item.Key, item.Value);
+			} catch {
+
+			}
+		}
+		
+		//And finally we have to set it into a file
+		
+		Delete_Group(File, Name);
+		
+		Create_Group(File, Name, FinalKeyDic);
+		
+	}
+	
+	
+	public static void Delete_Group(string File, string Name)
+	{
+		//Find the exact part where the line is
+		
+		string FileContent = System.IO.File.ReadAllText(File);
+		
+		FileContent = Regex.Replace(FileContent, Name + " {.*}", "", RegexOptions.Singleline);
+		
+		System.IO.File.WriteAllText(File, FileContent);
+		
+	}
+	
+	public static bool Group_Exists(string File, string Name)
+	{
+		if (!Directory.Exists(Path.GetDirectoryName(File))) {
+			return false;
+		} else if (!System.IO.File.Exists(File)) {
+			return false;
+		} else if (!System.IO.File.ReadAllText(File).Contains(Name + " {")) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	public static Dictionary<string, string> Extract_Keys(string File = "", string Text = "") {
+
+		if(string.IsNullOrEmpty(File) && string.IsNullOrEmpty(Text)) {
+			UnityEngine.Debug.LogError("At least one of the two nullable parameters has to be filled.");
+			return null;
+		}
+		
+		if(!string.IsNullOrEmpty(File) && !string.IsNullOrEmpty(Text)) {
+			UnityEngine.Debug.LogError("File and text cannot be in the same function called.");
+			return null;
+		}
+		
+		if(!File.Equals(String.Empty)) {
+			if (!System.IO.File.Exists(File)) {
+				throw new Exception(File + " not found.");
+				// INI File not found.
+				#pragma warning disable
+				return null;
+				#pragma warning restore
+				
+				
+			} else {
+				
+				Dictionary<string, string> returnvalue = new Dictionary<string, string>();
+
+				string FileText = System.IO.File.ReadAllText(File);
+				
+				foreach(string line_loopVariable in FileText.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries)) {
+					string key = line_loopVariable.Split('=').First();
+					string value = line_loopVariable.Split('=').Last();
+					returnvalue.Add(key, value);
+				}
+				
+				if(returnvalue == null) 
+				{
+					
+					throw new Exception("No se encontro ninguna key dentro de este archivo." );
+					// Key not found.
+					#pragma warning disable
+					return null;
+					#pragma warning restore
+					
+				} else {
+					
+					return returnvalue;
+					
+				}
+				
+			}
+
+		} else if(!Text.Equals(String.Empty)) {
+			
+			Dictionary<string, string> returnvalue = new Dictionary<string, string>();
+			
+			foreach(string line_loopVariable in Text.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries)) {
+				string key = line_loopVariable.Split('=').First();
+				string value = line_loopVariable.Split('=').Last();
+				returnvalue.Add(key, value);
+			}
+			
+			if(returnvalue == null) 
+			{
+				
+				throw new Exception("No se encontro ninguna key dentro de este texto." );
+				// Key not found.
+				#pragma warning disable
+				return null;
+				#pragma warning restore
+				
+			} else {
+				
+				return returnvalue;
+				
+			}
+			
+		}
+		
+		return null;
+
+	}
+
+}
+
+
+#endregion
